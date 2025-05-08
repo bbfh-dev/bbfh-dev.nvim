@@ -31,5 +31,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>=", vim.cmd.vsplit)
 vim.keymap.set("n", "<leader>+", vim.cmd.split)
 
+-- Remove search highlight on Esc
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 return {}
