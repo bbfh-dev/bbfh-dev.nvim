@@ -1,3 +1,5 @@
+-- Thanks to https://github.com/rockerBOO/awesome-neovim for the list of plugins
+
 require("config.options")
 require("config.lazy")
 require("config.keymap")
@@ -19,5 +21,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-
--- https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#split-and-window
