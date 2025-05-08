@@ -15,7 +15,7 @@ return {
 			less = { "prettier", stop_after_first = true },
 			css = { "prettier", stop_after_first = true },
 			sh = { "beautysh", stop_after_first = true },
-			go = { "crlfmt", stop_after_first = true },
+			go = { "goimports", "gofumpt", stop_after_first = false },
 		},
 		formatters = {
 			prettier = {
