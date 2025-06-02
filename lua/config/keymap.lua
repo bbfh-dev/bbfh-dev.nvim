@@ -1,12 +1,8 @@
 -- File management
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>W", "<cmd>noautocmd w<CR>")
-vim.keymap.set("n", "<leader>q", function()
-	vim.cmd("q")
-end)
-vim.keymap.set("n", "<leader>Q", function()
-	vim.cmd("qa")
-end)
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>Q", vim.cmd.qa)
 
 -- Line wrap
 vim.keymap.set({ "n" }, "<leader>[", function()
@@ -33,5 +29,7 @@ vim.keymap.set("n", "<leader>+", vim.cmd.split)
 
 -- Remove search highlight on Esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+vim.keymap.set("n", "<C-l>", "<cmd>!wl-copy %:p<CR>")
 
 return {}

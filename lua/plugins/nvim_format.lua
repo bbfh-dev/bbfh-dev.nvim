@@ -8,15 +8,16 @@ return {
 			-- You can customize some of the format options for the filetype (:help conform.format)
 			rust = { "rustfmt", lsp_format = "fallback" },
 			-- Conform will run the first available formatter
-			javascript = { "prettier", stop_after_first = true },
-			html = { "prettier", stop_after_first = true },
-			json = { "prettier", stop_after_first = true },
-			svg = { "prettier", stop_after_first = true },
+			javascript = { "biome", stop_after_first = true },
+			typescript = { "biome", stop_after_first = true },
+			-- html = { "prettier", stop_after_first = true },
+			json = { "jq", "prettier", stop_after_first = true },
 			less = { "prettier", stop_after_first = true },
 			css = { "prettier", stop_after_first = true },
+			yaml = { "prettier", stop_after_first = true },
 			sh = { "beautysh", stop_after_first = true },
 			go = { "goimports", "gofumpt", stop_after_first = false },
-			markdown = { "mdformat", "cbfmt", stop_after_first = false },
+			markdown = { "mdformat", stop_after_first = false },
 		},
 		formatters = {
 			prettier = {
@@ -50,6 +51,12 @@ return {
 
 					return { "--stdin-filepath", "$FILENAME" }
 				end,
+			},
+			biome = {
+				args = { "format", "--config-path", "/home/tux/.config/biome.json", "--stdin-file-path", "$FILENAME" },
+			},
+			jq = {
+				args = { "--tab" },
 			},
 		},
 	},
